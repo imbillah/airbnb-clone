@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 shadow-md p-3 md:p-4 md:px-12 grid grid-cols-3 ">
+    <header className="sticky top-0 z-50 shadow-md p-3 md:px-12 grid grid-cols-3 bg-white ">
       {/* logo */}
       <div className="cursor-pointer">
         <Image src="/asset/images/airbnbLogo.png" height={40} width={40} />
