@@ -7,10 +7,13 @@ import {
 } from "@heroicons/react/24/solid";
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 shadow-md p-3 md:px-12 grid grid-cols-3 bg-white ">
+    <header className="sticky top-0 z-50 shadow-md p-3 md:px-12 grid grid-cols-3 bg-gray-100 ">
       {/* logo */}
-      <div className="cursor-pointer">
+      <div className="cursor-pointer flex items-center space-x-2">
         <Image src="/asset/images/airbnbLogo.png" height={40} width={40} />
+        <h1 className="hidden md:block font-extrabold text-3xl text-sky-500">
+          airbnb
+        </h1>
       </div>
       {/* Search */}
       <div className="flex items-center border-2 rounded-full py-1 px-4 ">

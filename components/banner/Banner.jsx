@@ -3,19 +3,19 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="relative">
+    <div className="relative md:h-[700px]">
       <Image
-        src="/asset/images/airbnbBanner2.jpg"
+        src="https://i.postimg.cc/CxW4H61H/airbnb-Banner.png"
         width={1280}
         height={500}
-        className="w-screen opacity-75"
+        className="w-full h-full"
         alt="banner-image"
       />
       <div className="absolute top-1/4 w-full text-center">
-        <h2 className="text-neutral-700 text-xl font-semibold mb-2">
-          Explore and Travel the world
-        </h2>
-        <button className="text-sky-500 bg-white rounded-full px-12 py-3 shadow-md font-bold hover:shadow-lg active:scale-90 transition duration-150">
+        <h1 className="text-white text-xl md:text-5xl font-bold md:mb-8">
+          Lifelong Memories just a <br /> few seconds away
+        </h1>
+        <button className="text-white bg-sky-500 rounded-full md:px-12 md:py-3 px-6 py-2 mt-2 shadow-md font-bold hover:shadow-lg active:scale-90 transition duration-150">
           Explore
         </button>
       </div>
