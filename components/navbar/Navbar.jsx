@@ -4,8 +4,30 @@ import {
   UserCircleIcon,
   GlobeAltIcon,
   Bars3Icon,
+  UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { DateRangePicker } from "react-date-range";
 const Navbar = () => {
+  const [searchInput, setSearchInput] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const [guests, setGuests] = useState(1);
+
+  const selectionRange = {
+    startDate: startDate,
+    endDate: endDate,
+    key: "selection",
+  };
+  const handleSelect = (ranges) => {
+    setStartDate(ranges.selection.startDate);
+    setEndDate(ranges.selection.endDate);
+  };
+  const handleCancel = () => {
+    setSearchInput("");
+  };
   return (
     <header className="sticky top-0 z-50 shadow-md p-3 md:px-12 grid grid-cols-3 bg-gray-100 ">
       {/* logo */}
@@ -18,6 +40,8 @@ const Navbar = () => {
       {/* Search */}
       <div className="flex items-center border-2 rounded-full py-1 px-4 ">
         <input
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           className="bg-transparent outline-none w-full"
           type="text"
           placeholder="Search places"
@@ -35,6 +59,41 @@ const Navbar = () => {
           <UserCircleIcon className="w-7 h-7" />
         </div>
       </div>
+      {/* date picker */}
+      {searchInput && (
+        <div className="flex flex-col col-span-3 mx-auto mt-1 p-1">
+          <DateRangePicker
+            ranges={[selectionRange]}
+            minDate={new Date()}
+            rangeColors={["#0EA5E9"]}
+            onChange={handleSelect}
+          />
+
+          <div className="flex items-center border-b mb-2 p-2">
+            <h1 className="font-bold text-2xl flex-grow my-3">
+              Number of Guests
+            </h1>
+            <UserGroupIcon className="h-6 w-6 me-2" />
+            <input
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+              type="number"
+              min={1}
+              max={10}
+              className="w-14 pl-2 text-lg outline-none text-sky-500 rounded-md"
+            />
+          </div>
+          <div className="flex">
+            <button
+              className="flex-grow text-neutral-500"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
+            <button className="flex-grow text-sky-500">Search</button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
