@@ -3,4 +3,5 @@ import Banner from "./banner/Banner";
 import ExploreItems from "./cards/ExploreItems";
 import MediumCard from "./cards/MediumCard";
 import LargeCard from "./cards/LargeCard";
-export { Navbar, Banner, ExploreItems, MediumCard, LargeCard };
+import SearchResults from "./cards/SerachResults";
+export { Navbar, Banner, ExploreItems, MediumCard, LargeCard, SearchResults };
