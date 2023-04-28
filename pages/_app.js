@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import NProgress from "nprogress";
 import Head from "next/head";
 import Router from "next/router";
-
+import "mapbox-gl/dist/mapbox-gl.css";
 NProgress.configure({ showSpinner: false });
 
 Router.events.on("routeChangeStart", () => {

@@ -1,4 +1,4 @@
-import { Navbar, SearchResults } from "@/components";
+import { MapView, Navbar, SearchResults } from "@/components";
 import Footer from "@/components/Footer";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
@@ -13,7 +13,7 @@ const Search = ({ searchResults }) => {
   return (
     <div>
       <Navbar placeholder={`${location} | ${dateRange} | ${guests} guests`} />
-      <main className="flex">
+      <main className="flex space-x-2">
         <section className="flex-grow pt-10 px-6">
           <p className="italic text-neutral-600 font-semibold text-sm">
             200+ stays from {dateRange} for {guests} guests
@@ -34,6 +34,10 @@ const Search = ({ searchResults }) => {
               <SearchResults key={idx + 1} results={item} />
             ))}
           </div>
+        </section>
+        {/* map section */}
+        <section className="hidden md:block md:min-w-[600px] rounded-lg">
+          <MapView searchResults={searchResults} />
         </section>
       </main>
       <Footer />

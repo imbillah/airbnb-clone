@@ -8,7 +8,7 @@ const SerachResults = ({
 }) => {
   return (
     <div
-      className="md:w-1/2 flex space-x-2 p-2
+      className="flex space-x-2 p-2
     border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out rounded-md first:border-t
     "
     >

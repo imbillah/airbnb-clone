@@ -51,7 +51,7 @@ const Navbar = ({ placeholder }) => {
       {/* logo */}
       <Link href="/" className="cursor-pointer flex items-center space-x-2">
         <Image src="/asset/images/airbnbLogo.png" height={40} width={40} />
-        <h1 className="hidden md:block font-extrabold text-3xl text-sky-500">
+        <h1 className="hidden md:block font-bold text-3xl text-sky-500">
           airbnb
         </h1>
       </Link>

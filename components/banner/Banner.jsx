@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div className="relative md:h-[700px]">
       <Image
-        src="https://i.postimg.cc/CxW4H61H/airbnb-Banner.png"
+        src="https://i.postimg.cc/x14hY7fx/hero-section-banner-overlay.png"
         width={1280}
         height={500}
         className="w-full h-full"
